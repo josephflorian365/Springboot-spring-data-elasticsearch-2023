@@ -41,4 +41,8 @@ public class MyDocumentController {
     public List<MyDocument> search(@RequestParam String name){
         return myDocumentService.searchDocument(name);
     }
+    @GetMapping("/like/search")
+    public List<MyDocument> searchLike(@RequestParam("name") String name) {
+        return myDocumentService.searchLikeDocument(name);
+    }
 }

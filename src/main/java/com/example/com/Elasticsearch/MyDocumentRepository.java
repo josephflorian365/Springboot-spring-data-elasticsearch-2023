@@ -8,4 +8,5 @@ import java.util.List;
 public interface MyDocumentRepository extends ElasticsearchRepository<MyDocument, String> {
     @Query("{\"bool\": {\"must\": [{\"match\": {\"name\": \"?0\"}}]}}")
     List<MyDocument> findByNameUsingCustomQuery(String name);
+    List<MyDocument> findByNameLike(String name);
 }
